@@ -1,0 +1,6 @@
+{
+  "name": "SV Training Center & WorkSpace",
+  "description": "Premium Coworking Space & Training Center based in Alexandria, Egypt. Enjoy dedicated desks, training rooms, and a professional workspace in Alexandria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

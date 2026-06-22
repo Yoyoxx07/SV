@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SV Training Center & WorkSpace — Alexandria</title>
+  
+  <!-- Meta description and keywords -->
+  <meta name="description" content="SV WorkSpace is Alexandria's premier coworking and training center. Open 7 days a week, 9 AM–9 PM. Dedicated desks, training rooms, and community. Book your seat today.">
+  <meta name="keywords" content="coworking, workspace, Alexandria, training center, Al Azaritah, Babylon, freelancers, student hub, meeting rooms, startup Egypt">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="SV Training Center & WorkSpace — Alexandria">
+  <meta property="og:description" content="Alexandria's premier coworking space and training center designed for ambitious minds. Open 7 days a week, 9 AM - 9 PM.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wa.me/201212431947">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+  
+  <!-- Google Fonts selection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    /* -------------------------------------------------------------
+       CUSTOM CSS RESET & CONFIG
+       ------------------------------------------------------------- */
+    :root {
+      --primary-navy: #0D1B3E;
+      --secondary-navy: #1A2D5A;
+      --primary-gold: #F5A623;
+      --deep-gold: #D4880A;
+      --white: #FFFFFF;
+      --light-gray: #F4F4F4;
+      --dark-text: #0A0F1E;
+      --gray-text: rgba(255, 255, 255, 0.7);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --border-radius: 16px;
+      --glow-orange: 0 0 25px rgba(245, 166, 35, 0.4);
+      --header-height: 80px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--white);
+      color: var(--dark-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: var(--font-heading);
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Common layout classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .section-padding {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .bg-dark {
+      background-color: var(--primary-navy);
+      color: var(--white);
+    }
+
+    .bg-light {
+      background-color: var(--light-gray);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px auto;
+    }
+
+    .section-header.white h2 {
+      color: var(--white);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary-gold);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    .bg-dark .section-subtitle {
+      color: var(--gray-text);
+    }
+
+    /* Button utilities */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-gold {
+      background-color: var(--primary-gold);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--deep-gold);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: var(--glow-orange);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary-gold);
+      color: var(--primary-gold);
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: var(--white);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    /* Glass Effect Utilities */
+    .glass-card {
+      background: rgba(26, 45, 90, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(245, 166, 35, 0.15);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    /* Scroll triggers */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Brand Logo Recreation Styles */
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sv-logo-svg {
+      width: 50px;
+      height: 50px;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      color: var(--white);
+      letter-spacing: 1px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: var(--primary-gold);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* -------------------------------------------------------------
+       1. STICKY NAVBAR
+       ------------------------------------------------------------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background-color: var(--primary-navy);
+      border-bottom: 2px solid var(--primary-gold);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      background-color: rgba(13, 27, 62, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+      height: 70px;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      color: var(--white);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-gold);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--primary-gold);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: var(--primary-gold);
+    }
+
+    header .btn-nav-book {
+      padding: 10px 22px;
+      font-size: 0.9rem;
+      animation: pulse-glow 2.5s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 0 12spx rgba(245, 166, 35, 0);
+      }
+    }
+
+    /* Hamburger & Mobile Panel */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--white);
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+      background-color: var(--primary-gold);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+      background-color: var(--primary-gold);
+    }
+
+    /* -------------------------------------------------------------
+       2. HERO SECTION
+       ------------------------------------------------------------- */
+    #home {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      background-color: var(--primary-navy);
+      background-image: 
+        radial-gradient(circle at 30% 40%, rgba(245, 166, 35, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(26, 45, 90, 0.8) 0%, transparent 60%);
+      color: var(--white);
+      overflow: hidden;
+      padding-top: var(--header-height);
+    }
+
+    /* Grain overlays */
+    .noise-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      z-index: 2;
+    }
+
+    .diagonal-patterns {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(rgba(245, 166, 35, 0.08) 1.5px, transparent 1.5px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Floating shapes */
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 14s infinite ease-in-out;
+    }
+
+    .shape-1 {
+      width: 250px;
+      height: 250px;
+      top: 15%;
+      left: -80px;
+      background: rgba(245, 166, 35, 0.06);
+      filter: blur(40px);
+      animation-duration: 18s;
+    }
+
+    .shape-2 {
+      width: 350px;
+      height: 350px;
+      bottom: 5%;
+      right: -100px;
+      background: rgba(245, 166, 35, 0.06);
+      filter: blur(50px);
+      animation-duration: 22s;
+      animation-delay: -3s;
+    }
+
+    .shape-3 {
+      width: 80px;
+      height: 80px;
+      border: 1px dashed rgba(245, 166, 35, 0.2);
+      top: 45%;
+      left: 65%;
+      animation-duration: 15s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+      50% {
+        transform: translateY(-25px) rotate(45deg) scale(1.05);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 780px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.75rem, 5vw, 4.5rem);
+      line-height: 1.15;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #F5A623 0%, #FFD97D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--gray-text);
+      font-weight: 400;
+      max-width: 610px;
+      margin-bottom: 40px;
+      border-left: 3px solid var(--primary-gold);
+      padding-left: 20px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    /* Trust badges */
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+      max-width: 90%;
+    }
+
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .badge-icon {
+      font-size: 1.25rem;
+      color: var(--primary-gold);
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Scroll down arrow */
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      color: var(--white);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    .scroll-down:hover {
+      opacity: 1;
+      color: var(--primary-gold);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+      }
+      40% {
+        transform: translate(-50%, -10px);
+      }
+      60% {
+        transform: translate(-50%, -5px);
+      }
+    }
+
+    /* -------------------------------------------------------------
+       3. SERVICES SECTION
+       ------------------------------------------------------------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--primary-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(13, 27, 90, 0.08);
+      border-color: rgba(245, 166, 35, 0.3);
+    }
+
+    .service-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .service-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: rgba(13, 27, 62, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon-wrapper {
+      background-color: var(--primary-navy);
+    }
+
+    .service-icon {
+      font-size: 1.75rem;
+      color: var(--primary-navy);
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      color: var(--primary-gold);
+    }
+
+    .service-card h4 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .service-card h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: transparent;
+      transition: var(--transition);
+    }
+
+    .service-card:hover h4::after {
+      background-color: var(--primary-gold);
+      width: 50px;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       4. WHY CHOOSE US & STATS
+       ------------------------------------------------------------- */
+    #stats {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      position: relative;
+      background-image: radial-gradient(circle at right bottom, rgba(26, 45, 90, 0.7) 0%, transparent 50%);
+    }
+
+    .stats-counters {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 80px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      padding-bottom: 60px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary-gold);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+    }
+
+    /* Highlight Cards Area */
+    .highlights-title {
+      text-align: center;
+      font-size: 1.85rem;
+      margin-bottom: 40px;
+      color: var(--white);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .highlight-card {
+      padding: 35px;
+      border-radius: var(--border-radius);
+    }
+
+    .highlight-icon-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .highlight-icon {
+      font-size: 1.5rem;
+      color: var(--primary-gold);
+    }
+
+    .highlight-card h4 {
+      font-size: 1.25rem;
+      color: var(--white);
+    }
+
+    .highlight-card p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+    }
+
+    /* -------------------------------------------------------------
+       5. ABOUT SECTION
+       ------------------------------------------------------------- */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 2.25rem;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .about-lead {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--secondary-navy);
+      margin-bottom: 20px;
+    }
+
+    .about-body {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .about-quote {
+      border-left: 4px solid var(--primary-gold);
+      padding-left: 24px;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--primary-navy);
+      font-family: var(--font-heading);
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .about-illustrations {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .about-svg {
+      width: 100%;
+      height: auto;
+      max-width: 440px;
+      opacity: 0.95;
+      filter: drop-shadow(0 15px 35px rgba(13, 27, 62, 0.15));
+    }
+
+    /* -------------------------------------------------------------
+       6. WORKING HOURS SECTION
+       ------------------------------------------------------------- */
+    #hours {
+      background-color: var(--light-gray);
+      position: relative;
+    }
+
+    .hours-layout {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 50px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .hours-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .hours-header i {
+      font-size: 2rem;
+      color: var(--primary-gold);
+    }
+
+    .hours-header h3 {
+      font-size: 1.85rem;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .hours-table td {
+      padding: 16px 20px;
+      font-size: 1.05rem;
+    }
+
+    .hours-table td:first-child {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .hours-table td:nth-child(2) {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+    }
+
+    /* Alternating rows styled */
+    .hours-table tr:nth-child(even) {
+      background-color: rgba(13, 27, 62, 0.015);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .status-pill.open {
+      background-color: rgba(37, 211, 102, 0.12);
+      color: #128C7E;
+    }
+
+    /* Highlight class for TODAY */
+    .hours-table tr.today {
+      background-color: rgba(245, 166, 35, 0.15) !important;
+      border-left: 5px solid var(--primary-gold);
+      transform: scale(1.015);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .hours-table tr.today td {
+      font-weight: 700 !important;
+    }
+
+    .hours-table tr.today td:first-child {
+      color: var(--deep-gold);
+    }
+
+    .hours-action {
+      text-align: center;
+    }
+
+    /* -------------------------------------------------------------
+       7. LOCATION & MAP SECTION
+       ------------------------------------------------------------- */
+    .location-split {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      align-items: stretch;
+    }
+
+    .location-details {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .location-card-title {
+      font-size: 1.75rem;
+      margin-bottom: 24px;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 12px;
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .info-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: rgba(245, 166, 35, 0.15);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-gold);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .info-content h5 {
+      color: var(--primary-gold);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .info-content p, .info-content a {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+    }
+
+    .info-content a:hover {
+      color: var(--primary-gold);
+    }
+
+    .social-links-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .social-card-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: var(--secondary-navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-card-btn:hover {
+      background-color: var(--primary-gold);
+      color: var(--primary-navy);
+      transform: translateY(-5px);
+      box-shadow: var(--glow-orange);
+    }
+
+    /* Map column */
+    .map-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .map-iframe-container {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      height: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* -------------------------------------------------------------
+       8. CONTACT / CTA SECTION
+       ------------------------------------------------------------- */
+    #contact {
+      position: relative;
+      background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .contact-watermark {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,166,35,0.06);
+      pointer-events: none;
+    }
+    
+    .contact-watermark-small {
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,166,35,0.06);
+      pointer-events: none;
+    }
+
+    .contact-container {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .contact-headline {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+
+    .contact-headline span {
+      color: var(--primary-gold);
+    }
+
+    .contact-subtext {
+      font-size: 1.15rem;
+      color: var(--gray-text);
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-actions .btn {
+      min-width: 200px;
+    }
+
+    /* -------------------------------------------------------------
+       9. FOOTER
+       ------------------------------------------------------------- */
+    footer {
+      background-color: #050B1B;
+      color: var(--white);
+      padding-top: 80px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+
+    .footer-divider-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-navy) 0%, var(--primary-gold) 50%, var(--primary-navy) 100%);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    .footer-about .brand-logo-container {
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-tagline {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-bottom: 24px;
+      max-width: 280px;
+    }
+
+    .footer-title {
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 24px;
+      font-weight: 700;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: var(--primary-gold);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-gold);
+      padding-left: 6px;
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      color: var(--gray-text);
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-item i {
+      color: var(--primary-gold);
+      margin-top: 4px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .footer-social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: var(--primary-navy);
+      color: var(--primary-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-social-btn:hover {
+      background-color: var(--primary-gold);
+      color: var(--primary-navy);
+      transform: translateY(-4px);
+      box-shadow: var(--glow-orange);
+    }
+
+    .footer-copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* -------------------------------------------------------------
+       RESPONSIVE DESIGN BREAKPOINTS
+       ------------------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-counters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+      .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .about-split {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .about-illustrations {
+        order: -1;
+      }
+      .location-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      header .btn-nav-book {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      /* Expand links overlay full screen */
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-navy);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        transform: translateY(-100%);
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 999;
+      }
+      .nav-links.active {
+        transform: translateY(0);
+      }
+      .nav-item {
+        width: 100%;
+        text-align: center;
+      }
+      .nav-link {
+        font-size: 1.35rem;
+        display: inline-block;
+      }
+      
+      .hero-ctas {
+        flex-direction: column;
+      }
+      .hero-ctas .btn {
+        width: 100%;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .highlights-grid {
+        grid-template-columns: 1fr;
+      }
+      .hours-layout {
+        padding: 30px 16px;
+      }
+      .hours-table td {
+        padding: 12px 10px;
+        font-size: 0.95rem;
+      }
+      .location-details {
+        padding: 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background overlay (noise textured for premium finish) -->
+  <div class="noise-overlay"></div>
+
+  <!-- -------------------------------------------------------------
+       1. STICKY NAVBAR
+       ------------------------------------------------------------- -->
+  <header id="main-header">
+    <div class="container">
+      <a href="#home" class="brand-logo-container">
+        <!-- SVG Logo Recreation -->
+        <svg class="sv-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="SV Workspace Logo">
+          <circle cx="50" cy="50" r="43" fill="#0D1B3E" stroke="#F5A623" stroke-width="5" />
+          <path d="M 32,48 C 25,35 45,22 58,28 C 72,32 78,50 72,64 C 65,75 42,76 34,65 C 28,58 38,58 32,48 Z" fill="#F5A623" />
+          <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="25" fill="#0D1B3E" text-anchor="middle">SV</text>
+          <!-- Subtle V upward stroke detail in navy blue -->
+          <path d="M 61,38 L 65,29 M 65,41 L 70,32 M 69,44 L 74,35" stroke="#0D1B3E" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">SV Workspace</span>
+          <span class="brand-tagline">Training Center</span>
+        </div>
+      </a>
+
+      <!-- Navbar Links -->
+      <nav id="navbar-links" class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#hours" class="nav-link">Hours</a>
+        <a href="#location" class="nav-link">Location</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-nav-book">
+          <i class="fab fa-whatsapp"></i> Book Now
+        </a>
+        
+        <!-- Mobile hamburger -->
+        <button id="mobile-hamburger" class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- -------------------------------------------------------------
+       2. HERO SECTION
+       ------------------------------------------------------------- -->
+  <section id="home">
+    <div class="diagonal-patterns"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Your Space to<br>
+          <span class="gradient-text">Work. Learn. Grow.</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Alexandria's premium coworking space and training center — designed to inspire the next generation of ambitious minds.
+        </p>
+        
+        <div class="hero-ctas">
+          <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            <i class="fa-solid fa-calendar-check"></i> Book a Seat
+          </a>
+          <a href="#services" class="btn btn-outline">
+            Explore Services <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <!-- Trust badge row -->
+        <div class="trust-badges">
+          <div class="badge-item">
+            <span class="badge-icon">🕘</span>
+            <span>Open 7 Days a Week</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">📍</span>
+            <span>Al Azaritah, Alexandria</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">☕</span>
+            <span>Free Amenities</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">💼</span>
+            <span>Professional Environment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-down" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });" aria-label="Scroll to services">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       3. SERVICES SECTION
+       ------------------------------------------------------------- -->
+  <section id="services" class="bg-light section-padding">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">Everything you need to be productive, connected, and inspired.</p>
+      </div>
+      
+      <div class="services-grid animate-on-scroll reveal-group">
+        <!-- 1 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="fa-solid fa-desktop service-icon"></i>
+          </div>
+          <h4>Dedicated Desks</h4>
+          <p>Private workstations with high-speed internet, ergonomic chairs, and full amenities for focused deep work.</p>
+        </div>
+        
+        <!-- 2 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="fa-solid fa-graduation-cap service-icon"></i>
+          </div>
+          <h4>Training Rooms</h4>
+          <p>Fully equipped rooms with screens, whiteboards, sound systems and perfect layouts for corporate training, workshops, and courses.</p>
+        </div>
+        
+        <!-- 3 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="fa-solid fa-users service-icon"></i>
+          </div>
+          <h4>Meeting Rooms</h4>
+          <p>Professional meeting spaces available by the hour — perfect for collaborative client presentations and team alignments.</p>
+        </div>
+        
+        <!-- 4 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="fa-solid fa-mug-hot service-icon"></i>
+          </div>
+          <h4>Lounge & Café Area</h4>
+          <p>Relax and recharge in our stylish lounge with community atmospheres, social nodes, and complimentary drinks.</p>
+        </div>
+         
+        <!-- 5 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="fa-solid fa-wifi service-icon"></i>
+          </div>
+          <h4>High-Speed Internet</h4>
+          <p>Ultra-reliable fiber-optic connections and dual-band routers ensuring distraction-free workflows at all times.</p>
+        </div>
+        
+        <!-- 6 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="fa-solid fa-chart-line service-icon"></i>
+          </div>
+          <h4>Skill Development</h4>
+          <p>Curated educational programs, mentorship connections, and events helping you easily climb your industrial ladders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       4. WHY CHOOSE US & STATS SECTION
+       ------------------------------------------------------------- -->
+  <section id="stats" class="bg-dark section-padding stats-section">
+    <div class="container animate-on-scroll">
+      <!-- 4 Counters -->
+      <div class="stats-counters">
+        <div class="stat-item">
+          <span class="stat-number" data-target="500" data-suffix="+">0+</span>
+          <span class="stat-label">Happy Members</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="50" data-suffix="+">0+</span>
+          <span class="stat-label">Programs Hosted</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="7" data-suffix="">0</span>
+          <span class="stat-label">Days Open Weekly</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3" data-suffix="+">0+</span>
+          <span class="stat-label">Years of Excellence</span>
+        </div>
+      </div>
+      
+      <!-- Highlight Cards Area -->
+      <h3 class="highlights-title">Engineered to Support Your Growth Journey</h3>
+      
+      <div class="highlights-grid reveal-group">
+        <!-- Card 1 -->
+        <div class="glass-card highlight-card">
+          <div class="highlight-icon-title">
+            <i class="fa-solid fa-shield-halved highlight-icon"></i>
+            <h4>Secure & Private</h4>
+          </div>
+          <p>Your systems are safe. Enjoy lockable drawers, fast secure Wi-Fi, and monitored corridors ensuring total peace of mind.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="glass-card highlight-card">
+          <div class="highlight-icon-title">
+            <i class="fa-solid fa-network-wired highlight-icon"></i>
+            <h4>Community First</h4>
+          </div>
+          <p>Join an active network of highly talented local developers, designers, entrepreneurs, and professional educators.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="glass-card highlight-card">
+          <div class="highlight-icon-title">
+            <i class="fa-solid fa-clock highlight-icon"></i>
+            <h4>Flexible Plans</h4>
+          </div>
+          <p>Whether you need a desk for two hours, a corporate training room for a week, or monthly access, we have a plan for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       5. ABOUT SECTION
+       ------------------------------------------------------------- -->
+  <section id="about" class="section-padding">
+    <div class="container animate-on-scroll">
+      <div class="about-split">
+        <div class="about-text">
+          <h2 class="section-title" style="margin-bottom: 24px;">About SV WorkSpace</h2>
+          <p class="about-lead">SV Training Center & WorkSpace is Alexandria's dynamic coworking and upskilling hub.</p>
+          
+          <p class="about-body">
+            We provide an inspiring, distraction-free environment that maximizes productivity and accelerates personal growth. Centrally placed in Alexandria, we offer high-speed tools and vibrant workspaces tailored for startups, freelancers, students, and remote workers alike.
+          </p>
+          
+          <div class="about-quote">
+            "We don't just rent workspaces — we foster success and grow futures."
+          </div>
+          
+          <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+        
+        <div class="about-illustrations">
+          <!-- Animated workspace vector art SVG -->
+          <svg class="about-svg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+            <circle cx="250" cy="200" r="150" fill="url(#goldGlow)" opacity="0.18" />
+            <defs>
+              <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#F5A623" />
+                <stop offset="100%" stop-color="#F5A623" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <!-- Watermarked SV Logo background -->
+            <g transform="translate(250, 180) scale(1.6)" opacity="0.08">
+              <circle cx="0" cy="0" r="43" fill="none" stroke="#F5A623" stroke-width="4" />
+              <path d="M -18,-2 C -25,-15 -5,-28 8,-22 C 22,-18 28,0 22,14 C 15,25 -8,26 -16,15 C -22,8 -12,8 -18,-2 Z" fill="#F5A623" />
+              <text x="-4" y="8" font-family="'Playfair Display', serif" font-weight="900" font-size="25" fill="#F5A623" text-anchor="middle">S</text>
+              <text x="14" y="8" font-family="'Playfair Display', serif" font-weight="900" font-size="25" fill="#F5A623" text-anchor="middle">V</text>
+            </g>
+            
+            <!-- Desk layout vectors -->
+            <rect x="100" y="280" width="300" height="8" rx="4" fill="#1A2D5A" />
+            <line x1="120" y1="288" x2="110" y2="350" stroke="#1A2D5A" stroke-width="8" stroke-linecap="round"/>
+            <line x1="380" y1="288" x2="390" y2="350" stroke="#1A2D5A" stroke-width="8" stroke-linecap="round"/>
+            <line x1="250" y1="288" x2="250" y2="350" stroke="#1A2D5A" stroke-width="5" stroke-linecap="round"/>
+            
+            <!-- Laptop silhouette with screen gold blur -->
+            <rect x="210" y="242" width="80" height="30" rx="3" fill="#0D1B3E" stroke="#F5A623" stroke-width="2"/>
+            <line x1="195" y1="272" x2="305" y2="272" stroke="#F5A623" stroke-width="5" stroke-linecap="round" />
+            <polygon points="218,246 282,246 282,268 218,268" fill="#F5A623" opacity="0.3"/>
+            <path d="M232,256 L248,256 M232,261 L268,261" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+            
+            <!-- Desk Lamp -->
+            <path d="M 140,280 C 140,230 165,215 185,215" fill="none" stroke="#1A2D5A" stroke-width="6" stroke-linecap="round" />
+            <path d="M 175,205 Q 195,200 205,220" fill="none" stroke="#F5A623" stroke-width="8" stroke-linecap="round" />
+            <polygon points="190,220 150,280 230,280" fill="url(#lampLight)" opacity="0.25" />
+            <linearGradient id="lampLight" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#F5A623" />
+              <stop offset="100%" stop-color="#F5A623" stop-opacity="0" />
+            </linearGradient>
+
+            <!-- Potted flower -->
+            <polygon points="330,280 348,280 344,305 334,305" fill="#D4880A" />
+            <path d="M 339,280 C 330,258 318,263 323,252 C 328,241 339,258 339,280" fill="#F5A623" opacity="0.95"/>
+            <path d="M 339,280 C 348,258 360,263 355,252 C 350,241 339,258 339,280" fill="#F5A623" opacity="0.85"/>
+
+            <!-- Floating nodes of productivity -->
+            <circle cx="210" cy="180" r="5" fill="#F5A623" />
+            <circle cx="290" cy="190" r="7" fill="#F5A623" opacity="0.7"/>
+            <circle cx="250" cy="130" r="9" fill="#F5A623" />
+            <circle cx="170" cy="160" r="4" fill="#F5A623" opacity="0.5"/>
+            <line x1="210" y1="180" x2="250" y2="130" stroke="#F5A623" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+            <line x1="290" y1="190" x2="250" y2="130" stroke="#F5A623" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       6. WORKING HOURS SECTION
+       ------------------------------------------------------------- -->
+  <section id="hours" class="section-padding">
+    <div class="container animate-on-scroll">
+      <div class="section-header">
+        <h2 class="section-title">We're Open Every Day</h2>
+        <p class="section-subtitle">Visit us any day of the week — we're always ready to welcome you code-ninjas.</p>
+      </div>
+      
+      <div class="hours-layout">
+        <div class="hours-header">
+          <i class="fa-regular fa-clock"></i>
+          <h3>Weekly Schedule</h3>
+        </div>
+        
+        <table class="hours-table">
+          <!-- Days rows, data-day corresponds to JS Date.getDay() (0=Sunday, 1=Monday, etc) -->
+          <tr data-day="0">
+            <td>Sunday</td>
+            <td>9:00 AM – 9:00 PM</td>
+            <td><span class="status-pill open">● Open</span></td>
+          </tr>
+          <tr data-day="1">
+            <td>Monday</td>
+            <td>9:00 AM – 9:00 PM</td>
+            <td><span class="status-pill open">● Open</span></td>
+          </tr>
+          <tr data-day="2">
+            <td>Tuesday</td>
+            <td>9:00 AM – 9:00 PM</td>
+            <td><span class="status-pill open">● Open</span></td>
+          </tr>
+          <tr data-day="3">
+            <td>Wednesday</td>
+            <td>9:00 AM – 9:00 PM</td>
+            <td><span class="status-pill open">● Open</span></td>
+          </tr>
+          <tr data-day="4">
+            <td>Thursday</td>
+            <td>9:00 AM – 9:00 PM</td>
+            <td><span class="status-pill open">● Open</span></td>
+          </tr>
+          <tr data-day="5">
+            <td>Friday</td>
+            <td>9:00 AM – 9:00 PM</td>
+            <td><span class="status-pill open">● Open</span></td>
+          </tr>
+          <tr data-day="6">
+            <td>Saturday</td>
+            <td>9:00 AM – 9:00 PM</td>
+            <td><span class="status-pill open">● Open</span></td>
+          </tr>
+        </table>
+        
+        <div class="hours-action">
+          <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            <i class="fa-solid fa-chair"></i> Book Your Spot Today
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       7. LOCATION & MAP SECTION
+       ------------------------------------------------------------- -->
+  <section id="location" class="bg-dark section-padding">
+    <div class="container animate-on-scroll">
+      <div class="section-header white">
+        <h2 class="section-title" style="color: var(--white);">Find Us in Alexandria</h2>
+        <p class="section-subtitle">Drop by for a coffee and check out the optimal workspace structures.</p>
+      </div>
+      
+      <div class="location-split">
+        <!-- Details Card -->
+        <div class="glass-card location-details">
+          <div>
+            <h3 class="location-card-title">Contact & Direction Data</h3>
+            
+            <div class="contact-info-list">
+              <!-- Item 1 -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="info-content">
+                  <h5>Address</h5>
+                  <p>34 Ali El Kahshkhani St, Al Azaritah WA Ash Shatebi, Bab Shar', Alexandria, Egypt</p>
+                </div>
+              </div>
+              
+              <!-- Item 2 -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="info-content">
+                  <h5>Phone Call</h5>
+                  <p><a href="tel:+201212431947">01212431947</a></p>
+                </div>
+              </div>
+              
+              <!-- Item 3 -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="info-content">
+                  <h5>WhatsApp Messaging</h5>
+                  <p><a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer">Click to direct messages</a></p>
+                </div>
+              </div>
+              
+              <!-- Item 4 -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h5>Core Working Hours</h5>
+                  <p>Sunday – Saturday, 9 AM – 9 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="social-links-row">
+              <a href="https://www.facebook.com/share/1GJvEM9n3N/" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/sv_workspace24?igsh=MWlteTFxcmF3OXVlNw==" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="WhatsApp direct check">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Interactive Map Iframe -->
+        <div class="map-col">
+          <div class="map-iframe-container">
+            <iframe
+              src="https://maps.google.com/maps?q=34%20Ali%20El%20Kahshkhani%20St%2C%20Al%20Azaritah%2C%20Alexandria%2C%20Egypt&output=embed"
+              width="100%" height="100%" style="border:0; min-height: 380px;"
+              allowfullscreen="" loading="lazy" title="SV Workspace Map location">
+            </iframe>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=34+Ali+El+Kahshkhani+St,+Al+Azaritah+WA+Ash+Shatebi,+Bab+Shar,+Alexandria+Governorate+5423016" 
+             target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%;">
+            <i class="fa-solid fa-map-location-dot"></i> Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       8. CONTACT / CTA SECTION
+       ------------------------------------------------------------- -->
+  <section id="contact" class="section-padding">
+    <div class="contact-watermark"></div>
+    <div class="contact-watermark-small"></div>
+    
+    <div class="container">
+      <div class="contact-container animate-on-scroll">
+        <h2 class="contact-headline">Ready to <span>Join Us?</span></h2>
+        <p class="contact-subtext">
+          Whether you want to book a single seat, secure a corporate training room, or tour the space first — we are one click away. Contact our hosts instantly.
+        </p>
+        
+        <div class="contact-actions">
+          <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+          <a href="tel:+201212431947" class="btn btn-outline" style="background-color: var(--primary-navy);">
+            <i class="fa-solid fa-phone"></i> Call Us Directly
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=34+Ali+El+Kahshkhani+St,+Al+Azaritah+WA+Ash+Shatebi,+Bab+Shar,+Alexandria+Governorate+5423016" 
+             target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       9. FOOTER
+       ------------------------------------------------------------- -->
+  <footer>
+    <div class="footer-divider-gradient"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Description -->
+        <div class="footer-about">
+          <div class="brand-logo-container">
+            <svg class="sv-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 44px; height: 44px;">
+              <circle cx="50" cy="50" r="43" fill="#0D1B3E" stroke="#F5A623" stroke-width="5" />
+              <path d="M 32,48 C 25,35 45,22 58,28 C 72,32 78,50 72,64 C 65,75 42,76 34,65 C 28,58 38,58 32,48 Z" fill="#F5A623" />
+              <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="25" fill="#0D1B3E" text-anchor="middle">SV</text>
+              <path d="M 61,38 L 65,29 M 65,41 L 70,32 M 69,44 L 74,35" stroke="#0D1B3E" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+            <div class="brand-text">
+              <span class="brand-title" style="font-size: 1.1rem;">SV Workspace</span>
+              <span class="brand-tagline" style="font-size: 0.7rem; letter-spacing: 1.5px;">Training Center</span>
+            </div>
+          </div>
+          <p class="footer-logo-tagline">
+            Alexandria's inspiring hub empowering freelancers, seminar seekers and local professionals.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/1GJvEM9n3N/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/sv_workspace24?igsh=MWlteTFxcmF3OXVlNw==" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp direct link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home Base</a></li>
+            <li><a href="#services">Our Offerings</a></li>
+            <li><a href="#about">Story & Vibe</a></li>
+            <li><a href="#hours">Weekly Times</a></li>
+            <li><a href="#location">Find Our Door</a></li>
+            <li><a href="#contact">Contact Coordinates</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Quick Contacts -->
+        <div>
+          <h4 class="footer-title">Direct Connection</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>34 Ali El Kahshkhani St, Al Azaritah WA Ash Shatebi, Bab Shar', Alexandria Governorate 5423016</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+201212431947" style="color: var(--gray-text);">01212431947</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" style="color: var(--gray-text);">Direct Chat (Quick response)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 SV Training Center & WorkSpace. Highly Crafted & All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- -------------------------------------------------------------
+       VANILLA INTERACTION SCRIPTS
+       ------------------------------------------------------------- -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Sticky Header & Scrolled state toggle
+      const header = document.getElementById('main-header');
+      const stickyHeaderToggle = () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', stickyHeaderToggle);
+      stickyHeaderToggle(); // Initial check on load
+
+      // 2. Active section in Navigation highlight via IntersectionObserver
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      const activeNavObserverOptions = {
+        root: null,
+        threshold: 0.35,
+        rootMargin: "-80px 0px 0px 0px" // Header compensation offset
+      };
+
+      const activeNavObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, activeNavObserverOptions);
+
+      sections.forEach(sec => activeNavObserver.observe(sec));
+
+      // 3. Counter incremental animations
+      const startStatsCounters = () => {
+        const counters = document.querySelectorAll('.stat-number');
+        
+        const animateCount = (element) => {
+          const target = parseInt(element.getAttribute('data-target'), 10);
+          const suffix = element.getAttribute('data-suffix') || '';
+          const duration = 1800; // time in ms
+          const startTime = performance.now();
+          
+          const step = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Dynamic ease-out calculation
+            const speedCurve = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.floor(speedCurve * target);
+            
+            element.textContent = currentVal + suffix;
+            
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              element.textContent = target + suffix;
+            }
+          };
+          requestAnimationFrame(step);
+        };
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+          const statsObs = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                counters.forEach(counter => animateCount(counter));
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.2 });
+          statsObs.observe(statsSection);
+        }
+      };
+      
+      startStatsCounters();
+
+      // 4. Highlight current day row on Schedule
+      const highlightTodayRow = () => {
+        // new Date().getDay() returns 0 for Sunday, 1 for Monday ... 6 for Saturday
+        const currentDayIndex = new Date().getDay();
+        const row = document.querySelector(`.hours-table tr[data-day="${currentDayIndex}"]`);
+        if (row) {
+          row.classList.add('today');
+          
+          // Append is Today label
+          const labelCell = row.cells[0];
+          if (labelCell) {
+            labelCell.innerHTML += ' <span style="font-size: 0.75rem; color: var(--primary-navy); background: var(--primary-gold); padding: 3px 8px; border-radius: 5px; margin-left: 8px; font-weight: 800;">Today</span>';
+          }
+        }
+      };
+      highlightTodayRow();
+
+      // 5. Scroll triggers animations init
+      const scrollTriggerInit = () => {
+        const trigElements = document.querySelectorAll('.animate-on-scroll');
+        const triggerObs = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        trigElements.forEach(el => triggerObs.observe(el));
+      };
+      scrollTriggerInit();
+
+      // 6. Mobile Side Menu Toggler slide
+      const mobileButton = document.getElementById('mobile-hamburger');
+      const navContainer = document.getElementById('navbar-links');
+      
+      const toggleMobileNav = () => {
+        mobileButton.classList.toggle('active');
+        navContainer.classList.toggle('active');
+      };
+
+      mobileButton.addEventListener('click', toggleMobileNav);
+
+      // Close mobile navigation on navlink click
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navContainer.classList.contains('active')) {
+            toggleMobileNav();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
