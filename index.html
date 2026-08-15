@@ -1059,11 +1059,24 @@
       color: var(--primary-gold);
     }
 
+    .social-section {
+      margin-top: 28px;
+    }
+
+    .social-section-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary-gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .social-links-row {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 28px;
     }
 
     .social-card-btn {
@@ -1306,6 +1319,22 @@
       border-top: 1px solid rgba(255, 255, 255, 0.07);
       font-size: 0.85rem;
       color: rgba(255, 255, 255, 0.5);
+    }
+
+    .developed-by {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .developed-by .dev-name {
+      color: var(--primary-gold);
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     /* -------------------------------------------------------------
@@ -1861,8 +1890,19 @@
                   <p><a href="tel:+201212431947" dir="ltr">01212431947</a></p>
                 </div>
               </div>
+
+              <!-- Item 3: Email -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                  <h5 data-i18n="loc_email_title">البريد الإلكتروني</h5>
+                  <p><a href="mailto:surveyingservicesoffice@gmail.com" dir="ltr" style="word-break: break-all;">surveyingservicesoffice@gmail.com</a></p>
+                </div>
+              </div>
               
-              <!-- Item 3 -->
+              <!-- Item 4 -->
               <div class="info-item">
                 <div class="info-icon-box">
                   <i class="fab fa-whatsapp"></i>
@@ -1873,7 +1913,7 @@
                 </div>
               </div>
               
-              <!-- Item 4 -->
+              <!-- Item 5 -->
               <div class="info-item">
                 <div class="info-icon-box">
                   <i class="fa-regular fa-clock"></i>
@@ -1887,22 +1927,27 @@
           </div>
           
           <!-- Social Icons -->
-          <div class="social-links-row">
-            <a href="https://www.facebook.com/share/1GJvEM9n3N/" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/sv_workspace24?igsh=MWlteTFxcmF3OXVlNw==" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@sv.workspace?_t=ZS-8vnmOz9NN24&_r=1" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="TikTok">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.youtube.com/@svoffice5101" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
+          <div class="social-section">
+            <h5 class="social-section-title">
+              <i class="fa-solid fa-share-nodes"></i> <span data-i18n="loc_follow_us">تابعنا هنا</span>
+            </h5>
+            <div class="social-links-row">
+              <a href="https://www.facebook.com/share/1GJvEM9n3N/" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/sv_workspace24?igsh=MWlteTFxcmF3OXVlNw==" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.tiktok.com/@sv.workspace?_t=ZS-8vnmOz9NN24&_r=1" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a href="https://www.youtube.com/@svoffice5101" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="social-card-btn" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
           </div>
         </div>
         
@@ -2039,6 +2084,10 @@
               <a href="tel:+201212431947" style="color: var(--gray-text);" dir="ltr">01212431947</a>
             </div>
             <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:surveyingservicesoffice@gmail.com" style="color: var(--gray-text); word-break: break-all;" dir="ltr">surveyingservicesoffice@gmail.com</a>
+            </div>
+            <div class="footer-contact-item">
               <i class="fab fa-whatsapp"></i>
               <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" style="color: var(--gray-text);" data-i18n="footer_wa_text">محادثة واتساب مباشرة</a>
             </div>
@@ -2048,6 +2097,7 @@
       
       <div class="footer-copyright">
         <p data-i18n="footer_copyright">&copy; 2026 مركز SV للتدريب ومساحة العمل. جميع الحقوق محفوظة.</p>
+        <p class="developed-by" data-i18n="footer_dev_credit">Developed by <span class="dev-name">Yahia Gaber</span></p>
       </div>
     </div>
   </footer>
@@ -2133,10 +2183,12 @@
         loc_address_title: "العنوان",
         loc_address_val: "34 شارع علي الكشخاني، الأزاريطة والشاطبي، باب شرق، محافظة الإسكندرية 5423016",
         loc_phone_title: "الهاتف",
+        loc_email_title: "البريد الإلكتروني",
         loc_wa_title: "واتساب",
         loc_wa_val: "انقر للتواصل المباشر والدردشة",
         loc_hours_title: "مواعيد العمل",
         loc_hours_val: "الأحد – السبت: 9:00 صباحاً – 9:00 مساءً",
+        loc_follow_us: "تابعنا هنا",
         btn_open_maps: "فتح في خرائط جوجل",
         cta_headline: 'جاهز للانضمام إلى <span>مجتمعنا؟</span>',
         cta_subtext: "سواء كنت ترغب في حجز مكتب، تأجير قاعة تدريب، أو زيارة المكان واستكشافه بنفسك — نحن على بعد رسالة واحدة منك.",
@@ -2147,7 +2199,8 @@
         footer_quick_links: "روابط سريعة",
         footer_direct_contact: "تواصل مباشر",
         footer_wa_text: "محادثة واتساب مباشرة",
-        footer_copyright: "© 2026 مركز SV للتدريب ومساحة العمل. جميع الحقوق محفوظة."
+        footer_copyright: "© 2026 مركز SV للتدريب ومساحة العمل. جميع الحقوق محفوظة.",
+        footer_dev_credit: 'Developed by <span class="dev-name">Yahia Gaber</span>'
       },
       en: {
         meta_title: "SV Training Center & WorkSpace — Alexandria",
@@ -2224,10 +2277,12 @@
         loc_address_title: "Address",
         loc_address_val: "34 Ali El Kahshkhani St, Al Azaritah WA Ash Shatebi, Bab Shar', Alexandria Governorate 5423016",
         loc_phone_title: "Phone",
+        loc_email_title: "Email",
         loc_wa_title: "WhatsApp",
         loc_wa_val: "Click to chat directly",
         loc_hours_title: "Working Hours",
         loc_hours_val: "Sunday – Saturday: 9:00 AM – 9:00 PM",
+        loc_follow_us: "Follow us here",
         btn_open_maps: "Open in Google Maps",
         cta_headline: 'Ready to <span>Join Us?</span>',
         cta_subtext: "Whether you want to book a seat, rent a training room, or just come see the space — we're one message away.",
@@ -2238,7 +2293,8 @@
         footer_quick_links: "Quick Links",
         footer_direct_contact: "Direct Connection",
         footer_wa_text: "Direct WhatsApp Chat",
-        footer_copyright: "© 2026 SV Training Center & WorkSpace. All Rights Reserved."
+        footer_copyright: "© 2026 SV Training Center & WorkSpace. All Rights Reserved.",
+        footer_dev_credit: 'Developed by <span class="dev-name">Yahia Gaber</span>'
       }
     };
 
