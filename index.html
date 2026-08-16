@@ -18,10 +18,10 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
   
-  <!-- Google Fonts selection: Alexandria & Cairo for Arabic, DM Sans & Playfair Display for English -->
+  <!-- Google Fonts selection: Alexandria, IBM Plex Sans Arabic & Cairo for Arabic, DM Sans & Playfair Display for English -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -45,8 +45,8 @@
       --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       
       /* Default Arabic Fonts (Active by default) */
-      --font-body: 'Alexandria', 'Cairo', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-heading: 'Alexandria', 'Cairo', 'Playfair Display', serif;
+      --font-body: 'Alexandria', 'IBM Plex Sans Arabic', 'Cairo', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Alexandria', 'IBM Plex Sans Arabic', 'Cairo', 'Playfair Display', serif;
     }
 
     /* English Font Override when lang is en */
@@ -275,12 +275,14 @@
     .brand-logo-container {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      text-decoration: none;
+      user-select: none;
     }
 
     .sv-logo-svg {
-      width: 58px;
-      height: 58px;
+      width: 54px;
+      height: 54px;
       filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
       flex-shrink: 0;
       transition: var(--transition);
@@ -294,23 +296,32 @@
     .brand-text {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      font-family: var(--font-heading);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
     .brand-title {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       color: var(--white);
-      letter-spacing: 0.5px;
-      line-height: 1.15;
-      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 1.2;
+      font-weight: 800;
       font-family: var(--font-heading);
+      display: inline-block;
     }
 
     .brand-tagline {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--primary-gold);
-      letter-spacing: 1.2px;
-      font-weight: 800;
+      letter-spacing: 0;
+      line-height: 1.3;
+      font-weight: 600;
+      font-family: var(--font-body);
       margin-top: 2px;
+      display: inline-block;
+      opacity: 0.95;
     }
 
     /* -------------------------------------------------------------
@@ -348,39 +359,51 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 20px;
+      font-family: 'Alexandria', 'IBM Plex Sans Arabic', 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
     .nav-link {
       color: var(--white);
-      font-weight: 600;
-      font-size: 0.98rem;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0;
+      line-height: 1.5;
+      white-space: nowrap;
       position: relative;
-      padding: 6px 0;
+      padding: 6px 8px;
+      border-radius: 6px;
+      transition: var(--transition);
     }
 
     .nav-link::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
+      inset-inline-start: 8px;
       width: 0;
       height: 2px;
       background-color: var(--primary-gold);
+      border-radius: 2px;
       transition: var(--transition);
     }
 
     .nav-link:hover {
       color: var(--primary-gold);
+      background-color: rgba(255, 255, 255, 0.04);
     }
 
     .nav-link:hover::after,
     .nav-link.active::after {
-      width: 100%;
+      width: calc(100% - 16px);
     }
 
     .nav-link.active {
       color: var(--primary-gold);
+      font-weight: 700;
     }
 
     .nav-actions {
@@ -705,6 +728,39 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+    }
+
+    .service-card.has-img {
+      padding: 0;
+    }
+
+    .service-card-img-header {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--primary-navy);
+    }
+
+    .service-card-img-header img,
+    .service-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card:hover .service-card-img-header img,
+    .service-card:hover .service-img {
+      transform: scale(1.06);
+    }
+
+    .service-card.has-img .service-card-body {
+      padding: 28px 28px 34px 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .service-card::after {
@@ -1656,84 +1712,129 @@
       
       <div class="services-grid animate-on-scroll">
         <!-- 1: Quiet Focus Zones -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-brain service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/5trd0bvC/718981216-1327853602650294-1947052962731201804-n.jpg" alt="مناطق هادئة للتركيز الفعلي" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_1_title">مناطق هادئة للتركيز الفعلي</h4>
-          <p data-i18n="service_1_desc">مناطق هادئة ومخصصة للتركيز العميق والعمل الذهني الفعلي والمذاكرة بدون تشتيت، وليست مجرد مساحات مفتوحة.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-brain service-icon"></i>
+            </div>
+            <h4 data-i18n="service_1_title">مناطق هادئة للتركيز الفعلي</h4>
+            <p data-i18n="service_1_desc">مناطق هادئة ومخصصة للتركيز العميق والعمل الذهني الفعلي والمذاكرة بدون تشتيت، وليست مجرد مساحات مفتوحة.</p>
+          </div>
         </div>
 
         <!-- 2: Training Rooms -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-graduation-cap service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/HsYSfFcM/724540438-1307740907659303-6281456009753267484-n.jpg" alt="قاعات تدريب متكاملة" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_2_title">قاعات تدريب متكاملة</h4>
-          <p data-i18n="service_2_desc">قاعات مجهزة بالكامل ومثالية للورش التدريبية والمحاضرات، مع سبورات ذكية وأنظمة صوتية متطورة.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-graduation-cap service-icon"></i>
+            </div>
+            <h4 data-i18n="service_2_title">قاعات تدريب متكاملة</h4>
+            <p data-i18n="service_2_desc">قاعات مجهزة بالكامل ومثالية للورش التدريبية والمحاضرات، مع سبورات ذكية وأنظمة صوتية متطورة.</p>
+          </div>
         </div>
         
         <!-- 3: All Tools, Screens, Projectors & Cables -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-tv service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/qqs8mcdr/Gemini-Generated-Image-kwe9p2kwe9p2kwe9.jpg" alt="كافة الأدوات ومعدات العرض" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_3_title">كافة الأدوات ومعدات العرض</h4>
-          <p data-i18n="service_3_desc">نوفر شاشات عرض ذكية، أجهزة بروجيكتور حديثة، وكافة الكابلات والوصلات (HDMI, Type-C) التي ستحتاجها لعملك وعرضك.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-tv service-icon"></i>
+            </div>
+            <h4 data-i18n="service_3_title">كافة الأدوات ومعدات العرض</h4>
+            <p data-i18n="service_3_desc">نوفر شاشات عرض ذكية، أجهزة بروجيكتور حديثة، وكافة الكابلات والوصلات (HDMI, Type-C) التي ستحتاجها لعملك وعرضك.</p>
+          </div>
         </div>
         
         <!-- 4: Fully Air Conditioned -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-snowflake service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/h4s87rMV/Gemini-Generated-Image-yu6unyyu6unyyu6u.jpg" alt="مساحات مكيفة بالكامل" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_4_title">مساحات مكيفة بالكامل</h4>
-          <p data-i18n="service_4_desc">تكييف مركزي ومناخ مريح في جميع القاعات والمكاتب لضمان راحتك وانتعاشك والعمل في أقصى درجات الراحة طوال اليوم.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-snowflake service-icon"></i>
+            </div>
+            <h4 data-i18n="service_4_title">مساحات مكيفة بالكامل</h4>
+            <p data-i18n="service_4_desc">تكييف مركزي ومناخ مريح في جميع القاعات والمكاتب لضمان راحتك وانتعاشك والعمل في أقصى درجات الراحة طوال اليوم.</p>
+          </div>
         </div>
 
         <!-- 5: Open to Freelancers, Grads & Undergrads -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-user-graduate service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/tC6TGvKg/688875258-1572725918190559-5298830140522086750-n.jpg" alt="متاح للمستقلين والخريجين والطلبة" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_5_title">متاح للمستقلين والخريجين والطلبة</h4>
-          <p data-i18n="service_5_desc">مساحة مرحبة ومفتوحة للجميع: فريلانسرز، خريجون، وطلاب جامعيون لمشاريع التخرج والمذاكرة — لسنا فقط للشركات والفرق الكبيرة.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-user-graduate service-icon"></i>
+            </div>
+            <h4 data-i18n="service_5_title">متاح للمستقلين والخريجين والطلبة</h4>
+            <p data-i18n="service_5_desc">مساحة مرحبة ومفتوحة للجميع: فريلانسرز، خريجون، وطلاب جامعيون لمشاريع التخرج والمذاكرة — لسنا فقط للشركات والفرق الكبيرة.</p>
+          </div>
         </div>
         
         <!-- 6: Dedicated Desks -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-desktop service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/HnXVzSHQ/769051724-1024709460197777-7524523183013715847-n.jpg" alt="مكاتب عمل مخصصة" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_6_title">مكاتب عمل مخصصة</h4>
-          <p data-i18n="service_6_desc">مساحات عمل مريحة مجهزة بكراسي طبية مريحة وإنترنت فايبر فائق السرعة لإنجاز كافة مشاريعك ومهامك اليومية.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-desktop service-icon"></i>
+            </div>
+            <h4 data-i18n="service_6_title">مكاتب عمل مخصصة</h4>
+            <p data-i18n="service_6_desc">مساحات عمل مريحة مجهزة بكراسي طبية مريحة وإنترنت فايبر فائق السرعة لإنجاز كافة مشاريعك ومهامك اليومية.</p>
+          </div>
         </div>
 
         <!-- 7: Meeting Rooms -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-users service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/6QX4PxTn/667707724-1547700464026438-4152762256744244180-n.jpg" alt="غرف اجتماعات احترافية" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_7_title">غرف اجتماعات احترافية</h4>
-          <p data-i18n="service_7_desc">مساحات اجتماعات خاصة ومؤثثة بأناقة متاحة بالساعة — لعروض العملاء، المقابلات، ومناقشات فرق العمل.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-users service-icon"></i>
+            </div>
+            <h4 data-i18n="service_7_title">غرف اجتماعات احترافية</h4>
+            <p data-i18n="service_7_desc">مساحات اجتماعات خاصة ومؤثثة بأناقة متاحة بالساعة — لعروض العملاء، المقابلات، ومناقشات فرق العمل.</p>
+          </div>
         </div>
         
         <!-- 8: High Speed Internet -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-wifi service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/T2jxjyDM/Gemini-Generated-Image-pz6grnpz6grnpz6g.jpg" alt="إنترنت فايبر فائق السرعة" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_8_title">إنترنت فايبر فائق السرعة</h4>
-          <p data-i18n="service_8_desc">اتصال فايبر قوي وسريع وشبكات واي فاي مؤمّنة ومستقرة لضمان استمرار أعمالك واجتماعاتك دون انقطاع.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-wifi service-icon"></i>
+            </div>
+            <h4 data-i18n="service_8_title">إنترنت فايبر فائق السرعة</h4>
+            <p data-i18n="service_8_desc">اتصال فايبر قوي وسريع وشبكات واي فاي مؤمّنة ومستقرة لضمان استمرار أعمالك واجتماعاتك دون انقطاع.</p>
+          </div>
         </div>
         
         <!-- 9: Lounge & Cafe -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-mug-hot service-icon"></i>
+        <div class="service-card has-img">
+          <div class="service-card-img-header">
+            <img src="https://i.postimg.cc/K8ksNVHF/499925003-1264761898986964-1134133010520217777-n.jpg" alt="منطقة لاونج وكافيه" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <h4 data-i18n="service_9_title">منطقة لاونج وكافيه</h4>
-          <p data-i18n="service_9_desc">استرخِ واستعد طاقتك مع المشروبات الساخنة والباردة ومجتمع حيوي للتواصل وتبادل الأفكار وبناء علاقات مثمرة.</p>
+          <div class="service-card-body">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-mug-hot service-icon"></i>
+            </div>
+            <h4 data-i18n="service_9_title">منطقة لاونج وكافيه</h4>
+            <p data-i18n="service_9_desc">استرخِ واستعد طاقتك مع المشروبات الساخنة والباردة ومجتمع حيوي للتواصل وتبادل الأفكار وبناء علاقات مثمرة.</p>
+          </div>
         </div>
       </div>
     </div>
