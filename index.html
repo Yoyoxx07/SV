@@ -273,24 +273,26 @@
 
     /* Brand Logo Recreation Styles */
     .brand-logo-container {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       user-select: none;
+      flex-shrink: 0;
+      min-width: max-content;
     }
 
     .sv-logo-svg {
-      width: 54px;
-      height: 54px;
-      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+      width: 48px;
+      height: 48px;
+      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.35));
       flex-shrink: 0;
       transition: var(--transition);
     }
 
     .brand-logo-container:hover .sv-logo-svg {
-      transform: scale(1.05);
-      filter: drop-shadow(0 0 14px rgba(245, 166, 35, 0.6));
+      transform: scale(1.04);
+      filter: drop-shadow(0 0 12px rgba(245, 166, 35, 0.6));
     }
 
     .brand-text {
@@ -300,28 +302,59 @@
       font-family: var(--font-heading);
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+      white-space: nowrap;
     }
 
     .brand-title {
-      font-size: 1.35rem;
+      font-size: 1.22rem;
       color: var(--white);
       letter-spacing: 0;
-      line-height: 1.2;
+      line-height: 1.15;
       font-weight: 800;
       font-family: var(--font-heading);
-      display: inline-block;
+      display: block;
+      white-space: nowrap;
     }
 
     .brand-tagline {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       color: var(--primary-gold);
       letter-spacing: 0;
-      line-height: 1.3;
+      line-height: 1.2;
       font-weight: 600;
       font-family: var(--font-body);
       margin-top: 2px;
-      display: inline-block;
+      display: block;
+      white-space: nowrap;
       opacity: 0.95;
+    }
+
+    /* English Specific Brand Font Fit */
+    html[lang="en"] .brand-title {
+      font-size: 1.2rem;
+      letter-spacing: 0.4px;
+      font-family: var(--font-heading);
+      font-weight: 800;
+    }
+
+    html[lang="en"] .brand-tagline {
+      font-size: 0.68rem;
+      letter-spacing: 0.6px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Arabic Specific Brand Font Fit */
+    html[lang="ar"] .brand-title {
+      font-size: 1.22rem;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    html[lang="ar"] .brand-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0;
+      font-weight: 600;
     }
 
     /* -------------------------------------------------------------
@@ -548,10 +581,75 @@
       }
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
     .hero-content {
       position: relative;
       z-index: 5;
-      max-width: 820px;
+      max-width: 100%;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    .hero-image-glow {
+      position: absolute;
+      width: 100%;
+      max-width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(245, 166, 35, 0.25) 0%, rgba(245, 166, 35, 0.06) 50%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(25px);
+      animation: heroGlowPulse 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlowPulse {
+      0% {
+        transform: scale(0.92);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    .hero-main-img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45));
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: heroImgFloat 6s ease-in-out infinite;
+    }
+
+    .hero-main-img:hover {
+      transform: scale(1.03) translateY(-6px);
+    }
+
+    @keyframes heroImgFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
     }
 
     .hero-title {
@@ -844,6 +942,236 @@
       font-size: 0.95rem;
       color: #555;
       line-height: 1.7;
+    }
+
+    .service-card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px 18px;
+      background: rgba(13, 27, 62, 0.04);
+      border: 1.5px solid var(--primary-gold);
+      color: var(--primary-navy);
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      align-self: flex-start;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .service-card-btn:hover {
+      background: var(--primary-gold);
+      color: var(--primary-navy);
+      border-color: var(--primary-gold);
+      transform: translateY(-2px);
+      box-shadow: var(--glow-orange);
+    }
+
+    .service-card-btn .arrow-indicator {
+      font-size: 0.82rem;
+      transition: transform var(--transition);
+    }
+
+    html[dir="rtl"] .service-card-btn:hover .arrow-indicator {
+      transform: translateX(-4px);
+    }
+
+    html[dir="ltr"] .service-card-btn .arrow-indicator {
+      transform: rotate(180deg);
+    }
+
+    html[dir="ltr"] .service-card-btn:hover .arrow-indicator {
+      transform: rotate(180deg) translateX(-4px);
+    }
+
+    /* -------------------------------------------------------------
+       3.5 MENU / DRINKS & SNACKS SECTION
+       ------------------------------------------------------------- */
+    .menu-section {
+      position: relative;
+      background: radial-gradient(circle at 10% 20%, rgba(26, 45, 90, 0.8) 0%, var(--primary-navy) 70%);
+      color: var(--white);
+      overflow: hidden;
+      border-top: 1px solid rgba(245, 166, 35, 0.15);
+      border-bottom: 1px solid rgba(245, 166, 35, 0.15);
+    }
+
+    .menu-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 166, 35, 0.12);
+      border: 1px solid rgba(245, 166, 35, 0.35);
+      color: var(--primary-gold);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .menu-card {
+      background: rgba(26, 45, 90, 0.48);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(245, 166, 35, 0.22);
+      border-radius: var(--border-radius);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary-gold);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38), var(--glow-orange);
+      background: rgba(26, 45, 90, 0.65);
+    }
+
+    .menu-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1.5px solid rgba(245, 166, 35, 0.22);
+    }
+
+    .menu-card-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.22), rgba(212, 136, 10, 0.08));
+      border: 1.5px solid var(--primary-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary-gold);
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(245, 166, 35, 0.15);
+      transition: var(--transition);
+    }
+
+    .menu-card:hover .menu-card-icon-box {
+      transform: scale(1.08) rotate(-4deg);
+      background: var(--primary-gold);
+      color: var(--primary-navy);
+      box-shadow: var(--glow-orange);
+    }
+
+    .menu-card-title {
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--white);
+      font-family: var(--font-heading);
+      margin: 0 0 2px 0;
+      line-height: 1.25;
+    }
+
+    .menu-card-count {
+      font-size: 0.78rem;
+      color: var(--primary-gold);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .menu-item-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 0;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+
+    .menu-item-row:hover {
+      padding-inline: 6px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .menu-item-row:hover .menu-item-name {
+      color: var(--primary-gold);
+      transform: translateX(2px);
+    }
+
+    html[dir="rtl"] .menu-item-row:hover .menu-item-name {
+      transform: translateX(-2px);
+    }
+
+    .menu-item-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .menu-item-dots {
+      flex: 1;
+      border-bottom: 1.5px dotted rgba(245, 166, 35, 0.35);
+      margin: 0 8px 4px 8px;
+      min-width: 20px;
+      transition: var(--transition);
+    }
+
+    .menu-item-row:hover .menu-item-dots {
+      border-bottom-color: var(--primary-gold);
+    }
+
+    .menu-item-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-gold);
+      font-family: var(--font-heading);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .currency-unit {
+      font-size: 0.8rem;
+      font-weight: 700;
+      opacity: 0.92;
+    }
+
+    .menu-footer-banner {
+      margin-top: 45px;
+      text-align: center;
+      padding: 16px 24px;
+      background: rgba(26, 45, 90, 0.55);
+      backdrop-filter: blur(10px);
+      border: 1px dashed rgba(245, 166, 35, 0.35);
+      border-radius: 12px;
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 780px;
+      margin-inline: auto;
     }
 
     /* -------------------------------------------------------------
@@ -1461,12 +1789,25 @@
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .stats-counters {
         grid-template-columns: repeat(2, 1fr);
         gap: 36px;
       }
       .highlights-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .hero-image-wrapper {
+        order: -1;
+      }
+      .hero-main-img {
+        max-width: 340px;
       }
       .about-split {
         grid-template-columns: 1fr;
@@ -1482,6 +1823,19 @@
     }
 
     @media (max-width: 768px) {
+      .brand-logo-container {
+        gap: 8px;
+      }
+      .sv-logo-svg {
+        width: 42px;
+        height: 42px;
+      }
+      .brand-title {
+        font-size: 1.08rem !important;
+      }
+      .brand-tagline {
+        font-size: 0.64rem !important;
+      }
       .section-title {
         font-size: 2rem;
       }
@@ -1531,6 +1885,13 @@
       }
       .services-grid {
         grid-template-columns: 1fr;
+      }
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .menu-card {
+        padding: 24px 20px;
       }
       .highlights-grid {
         grid-template-columns: 1fr;
@@ -1593,6 +1954,7 @@
       <nav id="navbar-links" class="nav-links">
         <a href="#home" class="nav-link active" data-i18n="nav_home">الرئيسية</a>
         <a href="#services" class="nav-link" data-i18n="nav_services">خدماتنا</a>
+        <a href="#menu" class="nav-link" data-i18n="nav_menu">المشروبات والوجبات</a>
         <a href="#about" class="nav-link" data-i18n="nav_about">عن المركز</a>
         <a href="#hours" class="nav-link" data-i18n="nav_hours">ساعات العمل</a>
         <a href="#location" class="nav-link" data-i18n="nav_location">موقعنا</a>
@@ -1632,65 +1994,72 @@
     </div>
     
     <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title" data-i18n="hero_title">
-          مساحتك الخاصة للـ<br>
-          <span class="gradient-text">عمل. التعلم. والتطور.</span>
-        </h1>
-        
-        <p class="hero-subtitle" data-i18n="hero_subtitle">
-          مساحة العمل المشتركة ومركز التدريب الرائد في الإسكندرية — صُمم خصيصاً لتمكين وإلهام أصحاب الطموح والعقول المبدعة.
-        </p>
-        
-        <div class="hero-ctas">
-          <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-            <i class="fa-solid fa-calendar-check"></i> <span data-i18n="hero_cta_book">احجز مقعدك</span>
-          </a>
-          <a href="#services" class="btn btn-outline">
-            <span data-i18n="hero_cta_explore">استكشف الخدمات</span> <i class="fa-solid fa-arrow-left flip-on-ltr"></i>
-          </a>
-          <div class="hero-socials-wrapper">
-            <span class="hero-socials-label">
-              <i class="fa-solid fa-share-nodes"></i> <span data-i18n="loc_follow_us">تابعنا هنا</span>
-            </span>
-            <div class="hero-social-links">
-              <a href="https://www.facebook.com/share/1GJvEM9n3N/" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="Facebook" title="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://www.instagram.com/sv_workspace24?igsh=MWlteTFxcmF3OXVlNw==" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="Instagram" title="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.tiktok.com/@sv.workspace?_t=ZS-8vnmOz9NN24&_r=1" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="TikTok" title="TikTok">
-                <i class="fab fa-tiktok"></i>
-              </a>
-              <a href="https://www.youtube.com/@svoffice5101" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="YouTube" title="YouTube">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="WhatsApp" title="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-              </a>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-title" data-i18n="hero_title">
+            مساحتك الخاصة للـ<br>
+            <span class="gradient-text">عمل. التعلم. والتطور.</span>
+          </h1>
+          
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            مساحة العمل المشتركة ومركز التدريب الرائد في الإسكندرية — صُمم خصيصاً لتمكين وإلهام أصحاب الطموح والعقول المبدعة.
+          </p>
+          
+          <div class="hero-ctas">
+            <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+              <i class="fa-solid fa-calendar-check"></i> <span data-i18n="hero_cta_book">احجز مقعدك</span>
+            </a>
+            <a href="#services" class="btn btn-outline">
+              <span data-i18n="hero_cta_explore">استكشف الخدمات</span> <i class="fa-solid fa-arrow-left flip-on-ltr"></i>
+            </a>
+            <div class="hero-socials-wrapper">
+              <span class="hero-socials-label">
+                <i class="fa-solid fa-share-nodes"></i> <span data-i18n="loc_follow_us">تابعنا هنا</span>
+              </span>
+              <div class="hero-social-links">
+                <a href="https://www.facebook.com/share/1GJvEM9n3N/" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="Facebook" title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/sv_workspace24?igsh=MWlteTFxcmF3OXVlNw==" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="Instagram" title="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@sv.workspace?_t=ZS-8vnmOz9NN24&_r=1" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="TikTok" title="TikTok">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@svoffice5101" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="YouTube" title="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/201212431947" target="_blank" rel="noopener noreferrer" class="hero-social-btn" aria-label="WhatsApp" title="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Trust badge row -->
+          <div class="trust-badges">
+            <div class="badge-item">
+              <span class="badge-icon">🕘</span>
+              <span data-i18n="trust_open">مفتوح 7 أيام في الأسبوع</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">📍</span>
+              <span data-i18n="trust_location">الأزاريطة، الإسكندرية</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">❄️</span>
+              <span data-i18n="trust_ac">تكييف ومعدات عرض متكاملة</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">🎯</span>
+              <span data-i18n="trust_env">مناطق هادئة للتركيز الفعلي</span>
             </div>
           </div>
         </div>
-        
-        <!-- Trust badge row -->
-        <div class="trust-badges">
-          <div class="badge-item">
-            <span class="badge-icon">🕘</span>
-            <span data-i18n="trust_open">مفتوح 7 أيام في الأسبوع</span>
-          </div>
-          <div class="badge-item">
-            <span class="badge-icon">📍</span>
-            <span data-i18n="trust_location">الأزاريطة، الإسكندرية</span>
-          </div>
-          <div class="badge-item">
-            <span class="badge-icon">❄️</span>
-            <span data-i18n="trust_ac">تكييف ومعدات عرض متكاملة</span>
-          </div>
-          <div class="badge-item">
-            <span class="badge-icon">🎯</span>
-            <span data-i18n="trust_env">مناطق هادئة للتركيز الفعلي</span>
-          </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-image-glow"></div>
+          <img src="https://i.postimg.cc/dQfwDsJ9/Gemini-Generated-Image-i2l0hvi2l0hvi2l0-removebg-preview.png" alt="SV Workspace - Your Space to Work. Learn. Grow." class="hero-main-img" id="hero-main-img" loading="eager" referrerpolicy="no-referrer">
         </div>
       </div>
     </div>
@@ -1767,17 +2136,17 @@
           </div>
         </div>
 
-        <!-- 5: Open to Freelancers, Grads & Undergrads -->
+        <!-- 5: Dedicated Filming Spot -->
         <div class="service-card has-img">
           <div class="service-card-img-header">
-            <img src="https://i.postimg.cc/tC6TGvKg/688875258-1572725918190559-5298830140522086750-n.jpg" alt="متاح للمستقلين والخريجين والطلبة" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
+            <img src="https://i.postimg.cc/tC6TGvKg/688875258-1572725918190559-5298830140522086750-n.jpg" alt="مكان مخصص للتصوير وصناعة المحتوى" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
           <div class="service-card-body">
             <div class="service-icon-wrapper">
-              <i class="fa-solid fa-user-graduate service-icon"></i>
+              <i class="fa-solid fa-video service-icon"></i>
             </div>
-            <h4 data-i18n="service_5_title">متاح للمستقلين والخريجين والطلبة</h4>
-            <p data-i18n="service_5_desc">مساحة مرحبة ومفتوحة للجميع: فريلانسرز، خريجون، وطلاب جامعيون لمشاريع التخرج والمذاكرة — لسنا فقط للشركات والفرق الكبيرة.</p>
+            <h4 data-i18n="service_5_title">مكان مخصص للتصوير</h4>
+            <p data-i18n="service_5_desc">مكان مجهز ومناسب لتصوير الفيديوهات، البودكاست، المقابلات، وصناعة المحتوى بإضاءة وخلفية احترافية متكاملة.</p>
           </div>
         </div>
         
@@ -1823,19 +2192,221 @@
           </div>
         </div>
         
-        <!-- 9: Lounge & Cafe -->
+        <!-- 9: Break Area -->
         <div class="service-card has-img">
           <div class="service-card-img-header">
-            <img src="https://i.postimg.cc/K8ksNVHF/499925003-1264761898986964-1134133010520217777-n.jpg" alt="منطقة لاونج وكافيه" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
+            <img src="https://i.postimg.cc/K8ksNVHF/499925003-1264761898986964-1134133010520217777-n.jpg" alt="منطقة بريك (Break Area)" class="service-img" style="object-fit: cover; width: 100%; height: 100%;" loading="lazy" referrerpolicy="no-referrer">
           </div>
           <div class="service-card-body">
             <div class="service-icon-wrapper">
               <i class="fa-solid fa-mug-hot service-icon"></i>
             </div>
-            <h4 data-i18n="service_9_title">منطقة لاونج وكافيه</h4>
+            <h4 data-i18n="service_9_title">منطقة بريك (Break Area)</h4>
             <p data-i18n="service_9_desc">استرخِ واستعد طاقتك مع المشروبات الساخنة والباردة ومجتمع حيوي للتواصل وتبادل الأفكار وبناء علاقات مثمرة.</p>
+            <a href="#menu" class="service-card-btn" id="see-menu-card-btn" data-i18n="btn_see_menu">
+              <i class="fa-solid fa-mug-saucer"></i>
+              <span>شاهد المنيو؟</span>
+              <i class="fa-solid fa-arrow-left arrow-indicator"></i>
+            </a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       3.5 MENU / DRINKS & SNACKS SECTION
+       ------------------------------------------------------------- -->
+  <section id="menu" class="menu-section section-padding">
+    <div class="diagonal-patterns" style="opacity: 0.03;"></div>
+    <div class="container animate-on-scroll">
+      <div class="section-header white">
+        <div class="menu-badge-pill">
+          <i class="fa-solid fa-mug-saucer"></i> <span data-i18n="menu_badge">منطقة بريك SV</span>
+        </div>
+        <h2 class="section-title" style="color: var(--white);" data-i18n="menu_title">قائمة المشروبات والوجبات</h2>
+        <p class="section-subtitle" data-i18n="menu_subtitle">مشروبات ساخنة وباردة ووجبات خفيفة طازجة لتجديد نشاطك وطاقتك طوال فترة عملك ومذاكرتك.</p>
+      </div>
+
+      <div class="menu-grid">
+        <!-- 1: Hot Drinks -->
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <div class="menu-card-icon-box">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <div>
+              <h3 class="menu-card-title" data-i18n="menu_cat_hot">مشروبات ساخنة</h3>
+              <span class="menu-card-count" data-i18n="menu_count_hot">8 أصناف</span>
+            </div>
+          </div>
+
+          <div class="menu-items-list">
+            <!-- Tea -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_tea">شاي</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">15 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Anise -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_anise">ينسون</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">15 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Mint -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_mint">نعناع</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">15 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Hibiscus -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_hibiscus">كركديه</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">15 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Nescafe -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_nescafe">نسكافيه</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">25 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Tea with Milk -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_tea_milk">شاي بلبن</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">25 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Coffee -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_coffee">قهوة</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">30 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- French Coffee with Milk -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_french_coffee">قهوة فرنساوي باللبن</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">35 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2: Cold Drinks -->
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <div class="menu-card-icon-box">
+              <i class="fa-solid fa-glass-water-droplet"></i>
+            </div>
+            <div>
+              <h3 class="menu-card-title" data-i18n="menu_cat_cold">مشروبات باردة</h3>
+              <span class="menu-card-count" data-i18n="menu_count_cold">7 أصناف</span>
+            </div>
+          </div>
+
+          <div class="menu-items-list">
+            <!-- Water -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_water">مياه</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">10 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Juice -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_juice">عصير</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">12 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Sparkling Water -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_sparkling_water">مياه غازية</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">15 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Fresh Orange Juice -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_orange_juice">عصير برتقال فريش</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">40 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Iced Coffee -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_iced_coffee">أيس كوفي</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">50 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Fresh Mango Juice -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_mango_juice">عصير مانجو فريش</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">50 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Fresh Strawberry Juice -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_strawberry_juice">عصير فراولة فريش</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">50 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3: Snacks -->
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <div class="menu-card-icon-box">
+              <i class="fa-solid fa-cookie-bite"></i>
+            </div>
+            <div>
+              <h3 class="menu-card-title" data-i18n="menu_cat_snacks">تسالي ووجبات خفيفة</h3>
+              <span class="menu-card-count" data-i18n="menu_count_snacks">6 أصناف</span>
+            </div>
+          </div>
+
+          <div class="menu-items-list">
+            <!-- Indomie -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_indomie">إندومي</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">20 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Ferry Biscuit -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_ferry_biscuit">بسكوت فيري</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">7 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Molto -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_molto">مولتو</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">12 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Hohos -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_hohos">هوهوز</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">13 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Ulker Biscuit -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_ulker_biscuit">بسكوت اولكر</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">10 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+            <!-- Mandolin Chocolate Bar Mini -->
+            <div class="menu-item-row">
+              <span class="menu-item-name" data-i18n="item_mandolin_bar">لوح شوكولاتة ماندولين (صغير)</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">10 <span class="currency-unit" data-i18n="currency_egp">ج.م</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Footer Note -->
+      <div class="menu-footer-banner">
+        <span data-i18n="menu_note">☕ تتوفر جميع المشروبات والوجبات طوال ساعات العمل وتُقدم طازجة بأعلى معايير النظافة والجودة.</span>
       </div>
     </div>
   </section>
@@ -2254,6 +2825,7 @@
           <ul class="footer-links">
             <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
             <li><a href="#services" data-i18n="nav_services">خدماتنا</a></li>
+            <li><a href="#menu" data-i18n="nav_menu">المشروبات والوجبات</a></li>
             <li><a href="#about" data-i18n="nav_about">عن المركز</a></li>
             <li><a href="#hours" data-i18n="nav_hours">ساعات العمل</a></li>
             <li><a href="#location" data-i18n="nav_location">موقعنا</a></li>
@@ -2304,6 +2876,7 @@
         brand_tagline: "مركز تدريب ومساحة عمل",
         nav_home: "الرئيسية",
         nav_services: "خدماتنا",
+        nav_menu: "المشروبات والوجبات",
         nav_about: "عن المركز",
         nav_hours: "ساعات العمل",
         nav_location: "موقعنا",
@@ -2327,16 +2900,49 @@
         service_3_desc: "نوفر شاشات عرض ذكية، أجهزة بروجيكتور حديثة، وكافة الكابلات والوصلات (HDMI, Type-C) التي ستحتاجها لعملك وعرضك.",
         service_4_title: "مساحات مكيفة بالكامل",
         service_4_desc: "تكييف مركزي ومناخ مريح في جميع القاعات والمكاتب لضمان راحتك وانتعاشك والعمل في أقصى درجات الراحة طوال اليوم.",
-        service_5_title: "متاح للمستقلين والخريجين والطلبة",
-        service_5_desc: "مساحة مرحبة ومفتوحة للجميع: فريلانسرز، خريجون، وطلاب جامعيون لمشاريع التخرج والمذاكرة — لسنا فقط للشركات والفرق الكبيرة.",
+        service_5_title: "مكان مخصص للتصوير وصناعة المحتوى",
+        service_5_desc: "نوفر مكاناً مجهزاً ومناسباً لتصوير الفيديوهات، البودكاست، المقابلات، وصناعة المحتوى بإضاءة وخلفية احترافية متكاملة.",
         service_6_title: "مكاتب عمل مخصصة",
         service_6_desc: "مساحات عمل مريحة مجهزة بكراسي طبية مريحة وإنترنت فايبر فائق السرعة لإنجاز كافة مشاريعك ومهامك اليومية.",
         service_7_title: "غرف اجتماعات احترافية",
         service_7_desc: "مساحات اجتماعات خاصة ومؤثثة بأناقة متاحة بالساعة — لعروض العملاء، المقابلات، ومناقشات فرق العمل.",
         service_8_title: "إنترنت فايبر فائق السرعة",
         service_8_desc: "اتصال فايبر قوي وسريع وشبكات واي فاي مؤمّنة ومستقرة لضمان استمرار أعمالك واجتماعاتك دون انقطاع.",
-        service_9_title: "منطقة لاونج وكافيه",
+        service_9_title: "منطقة بريك (Break Area)",
         service_9_desc: "استرخِ واستعد طاقتك مع المشروبات الساخنة والباردة ومجتمع حيوي للتواصل وتبادل الأفكار وبناء علاقات مثمرة.",
+        btn_see_menu: '<i class="fa-solid fa-mug-saucer"></i> <span>شاهد المنيو؟</span> <i class="fa-solid fa-arrow-left arrow-indicator"></i>',
+        menu_badge: "منطقة بريك SV",
+        menu_title: "قائمة المشروبات والوجبات",
+        menu_subtitle: "مشروبات ساخنة وباردة ووجبات خفيفة طازجة لتجديد نشاطك وطاقتك طوال فترة عملك ومذاكرتك.",
+        menu_cat_hot: "مشروبات ساخنة",
+        menu_cat_cold: "مشروبات باردة",
+        menu_cat_snacks: "تسالي ووجبات خفيفة",
+        menu_count_hot: "8 أصناف",
+        menu_count_cold: "7 أصناف",
+        menu_count_snacks: "6 أصناف",
+        currency_egp: "ج.م",
+        item_tea: "شاي",
+        item_anise: "ينسون",
+        item_mint: "نعناع",
+        item_hibiscus: "كركديه",
+        item_nescafe: "نسكافيه",
+        item_tea_milk: "شاي بلبن",
+        item_coffee: "قهوة",
+        item_french_coffee: "قهوة فرنساوي باللبن",
+        item_water: "مياه",
+        item_juice: "عصير",
+        item_sparkling_water: "مياه غازية",
+        item_orange_juice: "عصير برتقال فريش",
+        item_iced_coffee: "أيس كوفي",
+        item_mango_juice: "عصير مانجو فريش",
+        item_strawberry_juice: "عصير فراولة فريش",
+        item_indomie: "إندومي",
+        item_ferry_biscuit: "بسكوت فيري",
+        item_molto: "مولتو",
+        item_hohos: "هوهوز",
+        item_ulker_biscuit: "بسكوت اولكر",
+        item_mandolin_bar: "لوح شوكولاتة ماندولين (صغير)",
+        menu_note: "☕ تتوفر جميع المشروبات والوجبات طوال ساعات العمل وتُقدم طازجة بأعلى معايير النظافة والجودة.",
         stat_members: "عضو متميز",
         stat_programs: "برنامج تدريبي",
         stat_days: "أيام مفتوح أسبوعياً",
@@ -2398,6 +3004,7 @@
         brand_tagline: "Training Center & WorkSpace",
         nav_home: "Home",
         nav_services: "Services",
+        nav_menu: "Drinks & Snacks",
         nav_about: "About",
         nav_hours: "Hours",
         nav_location: "Location",
@@ -2421,16 +3028,49 @@
         service_3_desc: "All tools included: high-res presentation screens, modern projectors, and every essential cable and adapter (HDMI, Type-C) you'll ever need.",
         service_4_title: "Fully Air-Conditioned",
         service_4_desc: "Full climate control and fresh air conditioning across all desks and rooms, ensuring year-round comfort and productivity.",
-        service_5_title: "Open to Freelancers, Grads & Undergrads",
-        service_5_desc: "Welcoming individual freelancers, university graduates, and undergrad students for graduation projects and study — not just big teams.",
+        service_5_title: "Filming & Content Creation Spot",
+        service_5_desc: "A dedicated spot equipped for filming videos, podcast recording, interviews, and creative content with optimal lighting and aesthetics.",
         service_6_title: "Dedicated Desks",
         service_6_desc: "Private workstations with ergonomic chairs, power outlets, and full amenities for focused day-to-day execution.",
         service_7_title: "Private Meeting Rooms",
         service_7_desc: "Professional meeting spaces available by the hour — perfect for client pitches, interviews, and team sessions.",
         service_8_title: "Ultra-Fast Fiber Internet",
         service_8_desc: "Ultra-reliable fiber-optic connection with secure high-speed Wi-Fi ensuring uninterrupted online meetings and downloads.",
-        service_9_title: "Lounge & Café Area",
-        service_9_desc: "Relax and recharge in our stylish lounge with refreshments and a vibrant community to network and exchange ideas.",
+        service_9_title: "Break Area",
+        service_9_desc: "Relax and recharge in our stylish break area with refreshments and a vibrant community to network and exchange ideas.",
+        btn_see_menu: '<i class="fa-solid fa-mug-saucer"></i> <span>See the Menu?</span> <i class="fa-solid fa-arrow-left arrow-indicator"></i>',
+        menu_badge: "SV Break Area",
+        menu_title: "Drinks & Snacks Menu",
+        menu_subtitle: "Fresh hot and cold beverages and energizing snacks to fuel your productivity and study sessions.",
+        menu_cat_hot: "Hot Drinks",
+        menu_cat_cold: "Cold Drinks",
+        menu_cat_snacks: "Snacks",
+        menu_count_hot: "8 Items",
+        menu_count_cold: "7 Items",
+        menu_count_snacks: "6 Items",
+        currency_egp: "EGP",
+        item_tea: "Tea",
+        item_anise: "Anise",
+        item_mint: "Mint",
+        item_hibiscus: "Hibiscus",
+        item_nescafe: "Nescafe",
+        item_tea_milk: "Tea with Milk",
+        item_coffee: "Coffee",
+        item_french_coffee: "French Coffee with Milk",
+        item_water: "Water",
+        item_juice: "Juice",
+        item_sparkling_water: "Sparkling Water",
+        item_orange_juice: "Fresh Orange Juice",
+        item_iced_coffee: "Iced Coffee",
+        item_mango_juice: "Fresh Mango Juice",
+        item_strawberry_juice: "Fresh Strawberry Juice",
+        item_indomie: "Indomie",
+        item_ferry_biscuit: "Ferry Biscuit",
+        item_molto: "Molto",
+        item_hohos: "Hohos",
+        item_ulker_biscuit: "Ulker Biscuit",
+        item_mandolin_bar: "Mandolin Chocolate Bar (Mini)",
+        menu_note: "☕ All drinks and snacks are available throughout all open hours and served fresh with top hygiene standards.",
         stat_members: "Happy Members",
         stat_programs: "Training Programs",
         stat_days: "Days Open Weekly",
